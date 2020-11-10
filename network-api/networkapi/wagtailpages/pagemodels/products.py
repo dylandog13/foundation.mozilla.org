@@ -99,7 +99,7 @@ class ProductPagePrivacyPolicyLink(Orderable):
 class ProductUpdates(Orderable):
     page = ParentalKey(
         'wagtailpages.ProductPage',
-        related_name='product_updates',
+        related_name='updates',
         on_delete=models.CASCADE,
     )
 
@@ -381,7 +381,7 @@ class ProductPage(FoundationMetadataPageMixin, Page):
         ),
         MultiFieldPanel(
             [
-                InlinePanel('product_updates', label='Update')
+                InlinePanel('updates', label='Update')
             ],
             heading='Product Updates',
         ),
